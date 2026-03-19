@@ -36,7 +36,7 @@ let html = "";
 
 links.forEach(section => {
 
-  html += `<p style="color:#888;font-size:12px;margin:15px 10px 5px;">
+  html += `<p class="nav-group-title">
   ${section.group}
   </p>`;
 

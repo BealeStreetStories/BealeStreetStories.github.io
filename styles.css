@@ -9,8 +9,8 @@
   --gold:#F7B10C;
 
   --bg:#070B16;
-  --surface:#0B1224;
-  --surface2:#0E1730;
+  --surface:rgba(12,67,247,.10);
+  --surface2:rgba(12,67,247,.16);
   --text:#EAF0FF;
   --muted:rgba(234,240,255,.72);
   --muted2:rgba(234,240,255,.58);
@@ -25,8 +25,6 @@
   --scriptFont: 'Pacifico', cursive;
   --siteFont: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
 
-  --surface:rgba(12,67,247,.10);
-  --surface2:rgba(12,67,247,.16);
   --borderGold:rgba(247,177,12,.30);
   --borderBlue:rgba(12,67,247,.35);
   --ringOrange:rgba(247,83,12,.18);
@@ -207,7 +205,8 @@ summary, details, p, li, a{
   margin-top:14px;
 }
 
-.nav p{
+.nav p,
+.nav-group-title{
   font-family: var(--scriptFont) !important;
   font-weight:normal !important;
   margin:16px 10px 6px !important;
