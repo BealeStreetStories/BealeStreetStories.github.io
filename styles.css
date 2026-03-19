@@ -7,15 +7,15 @@
    ============================================ */
 :root {
   /* Core palette */
-  --ocean:    #1AB8D4;   /* teal ocean wave */
-  --navy:     #1A3A6B;   /* deep navy border */
-  --sun:      #F5C842;   /* golden sun / logo text */
-  --sand:     #E8C87A;   /* warm sandy beach */
-  --sky:      #5BB8F5;   /* bright sky blue */
-  --foam:     #D6F4FA;   /* wave foam / light text */
+  --ocean:    #1AB8D4;
+  --navy:     #1A3A6B;
+  --sun:      #F5C842;
+  --sand:     #E8C87A;
+  --sky:      #5BB8F5;
+  --foam:     #D6F4FA;
 
   /* UI surfaces */
-  --bg:       #0B1E3A;   /* deep navy background */
+  --bg:       #0B1E3A;
   --surface:  rgba(26,56,107,.18);
   --surface2: rgba(26,184,212,.14);
   --text:     #EEF7FF;
@@ -44,7 +44,7 @@ html{ scroll-behavior:smooth; }
 
 body{
   background:
-    linear-gradient(rgba(11,30,58,.35), rgba(11,30,58,.45)),
+    linear-gradient(rgba(11,30,58,.30), rgba(11,30,58,.40)),
     url("/PCRP/assets/ca-bg.jpg");
   background-size:cover;
   background-position:center;
@@ -83,7 +83,7 @@ summary, details, p, li, a{
   position:sticky;
   top:0;
   z-index:50;
-  background: rgba(11,30,58,0.75) !important;
+  background: rgba(11,30,58,0.40) !important;
   border-bottom: 2px solid var(--sun) !important;
   backdrop-filter: blur(16px) saturate(130%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(130%) !important;
@@ -161,7 +161,7 @@ summary, details, p, li, a{
   top:72px;
   height:calc(100vh - 72px);
   overflow:auto;
-  background: rgba(11,30,58,0.72) !important;
+  background: rgba(11,30,58,0.35) !important;
   border-right: 1px solid rgba(26,184,212,.25) !important;
   backdrop-filter: blur(16px) saturate(120%) !important;
   -webkit-backdrop-filter: blur(16px) saturate(120%) !important;
@@ -196,7 +196,7 @@ summary, details, p, li, a{
   padding:10px 12px;
   border-radius:var(--radius);
   border:1px solid var(--borderOcean) !important;
-  background: rgba(26,56,107,.30) !important;
+  background: rgba(26,56,107,.25) !important;
   color:var(--text);
   outline:none;
   transition:border-color var(--trans), box-shadow var(--trans), background var(--trans);
@@ -207,7 +207,7 @@ summary, details, p, li, a{
 .search input:focus{
   border-color: var(--ocean) !important;
   box-shadow:0 0 0 4px var(--ringOcean) !important;
-  background: rgba(26,56,107,.45) !important;
+  background: rgba(26,56,107,.35) !important;
 }
 
 /* Nav */
@@ -269,7 +269,7 @@ summary, details, p, li, a{
   flex:1 1 auto;
   min-width:0;
   padding:32px 36px;
-  background: rgba(11,30,58,0.60) !important;
+  background: rgba(11,30,58,0.25) !important;
   border: 1px solid rgba(26,184,212,.20) !important;
   border-radius: var(--radius);
   box-shadow: 0 26px 60px rgba(0,0,0,.40) !important;
@@ -349,7 +349,7 @@ a:hover{
 
 /* Details dropdowns */
 details{
-  background: rgba(11,30,58,.55) !important;
+  background: rgba(11,30,58,.30) !important;
   border:1px solid rgba(26,184,212,.28) !important;
   border-radius:var(--radius);
   box-shadow: 0 10px 24px rgba(0,0,0,.28) !important;
@@ -413,7 +413,7 @@ tr:last-child td{ border-bottom:none; }
 .searchResults{
   margin-top:10px;
   border:1px solid rgba(26,184,212,.30);
-  background: rgba(11,30,58,.88);
+  background: rgba(11,30,58,.75);
   backdrop-filter: blur(14px);
   border-radius: var(--radius);
   box-shadow: 0 20px 45px rgba(0,0,0,.50);
@@ -463,7 +463,7 @@ tr:last-child td{ border-bottom:none; }
 }
 
 .serverInfoCard{
-  background: rgba(26,56,107,.25) !important;
+  background: rgba(26,56,107,.20) !important;
   border: 1px solid rgba(26,184,212,.25) !important;
   backdrop-filter: blur(18px) saturate(130%) !important;
   -webkit-backdrop-filter: blur(18px) saturate(130%) !important;
