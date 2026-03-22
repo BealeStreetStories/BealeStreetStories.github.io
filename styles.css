@@ -593,4 +593,139 @@ tr:last-child td{ border-bottom:none; }
   #menuBtn{ display:inline-block !important; }
   .main{ padding:16px; }
   .serverStatus{ display:none; }
+
+  /* ========== OCEAN SCENE ========== */
+#oceanScene{
+  position:fixed;
+  bottom:0;
+  left:0;
+  right:0;
+  height:200px;
+  z-index:30;
+  pointer-events:none;
+  overflow:hidden;
+}
+
+/* Water gradient */
+#oceanScene::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(10,40,80,.45) 30%,
+    rgba(8,30,65,.75) 60%,
+    rgba(6,20,50,.92) 100%
+  );
+  z-index:1;
+}
+
+/* Ocean SVG fills full scene */
+#oceanScene svg{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  height:100%;
+}
+
+/* ===== WATER SURFACE WAVES ===== */
+.waterSurface{
+  animation: waterShimmer 6s ease-in-out infinite;
+}
+@keyframes waterShimmer{
+  0%,100%{ opacity:.85; }
+  50%{ opacity:1; }
+}
+
+.waveLayer1{ animation: waveDrift1 8s ease-in-out infinite; }
+.waveLayer2{ animation: waveDrift2 11s ease-in-out infinite; }
+.waveLayer3{ animation: waveDrift3 14s ease-in-out infinite; }
+@keyframes waveDrift1{
+  0%,100%{ transform: translateX(0); }
+  50%{ transform: translateX(-18px); }
+}
+@keyframes waveDrift2{
+  0%,100%{ transform: translateX(0); }
+  50%{ transform: translateX(22px); }
+}
+@keyframes waveDrift3{
+  0%,100%{ transform: translateX(0); }
+  50%{ transform: translateX(-12px); }
+}
+
+/* ===== SEAWEED ===== */
+.seaweed{
+  transform-origin: bottom center;
+}
+.sw1{ animation: sway 4s ease-in-out infinite; }
+.sw2{ animation: sway 5.5s ease-in-out infinite reverse; }
+.sw3{ animation: sway 3.8s ease-in-out infinite; }
+.sw4{ animation: sway 6s ease-in-out infinite reverse; }
+.sw5{ animation: sway 4.5s ease-in-out infinite; }
+@keyframes sway{
+  0%,100%{ transform: rotate(-8deg); }
+  50%{ transform: rotate(8deg); }
+}
+
+/* ===== FISH ===== */
+.fish{ animation-timing-function: linear; animation-iteration-count: infinite; }
+.fish1{ animation: swimRight1 18s linear infinite; }
+.fish2{ animation: swimLeft1 24s linear infinite; }
+.fish3{ animation: swimRight2 14s linear infinite; animation-delay: -6s; }
+.fish4{ animation: swimLeft2 20s linear infinite; animation-delay: -10s; }
+.fish5{ animation: swimRight3 28s linear infinite; animation-delay: -4s; }
+.fish6{ animation: swimLeft3 16s linear infinite; animation-delay: -12s; }
+
+@keyframes swimRight1{
+  0%{ transform: translateX(-80px); }
+  100%{ transform: translateX(calc(100vw + 80px)); }
+}
+@keyframes swimRight2{
+  0%{ transform: translateX(-80px); }
+  100%{ transform: translateX(calc(100vw + 80px)); }
+}
+@keyframes swimRight3{
+  0%{ transform: translateX(-80px); }
+  100%{ transform: translateX(calc(100vw + 80px)); }
+}
+@keyframes swimLeft1{
+  0%{ transform: translateX(calc(100vw + 80px)) scaleX(-1); }
+  100%{ transform: translateX(-80px) scaleX(-1); }
+}
+@keyframes swimLeft2{
+  0%{ transform: translateX(calc(100vw + 80px)) scaleX(-1); }
+  100%{ transform: translateX(-80px) scaleX(-1); }
+}
+@keyframes swimLeft3{
+  0%{ transform: translateX(calc(100vw + 80px)) scaleX(-1); }
+  100%{ transform: translateX(-80px) scaleX(-1); }
+}
+
+/* ===== BUBBLES ===== */
+.bubble{ animation: rise linear infinite; opacity:0; }
+.b1{ animation-duration:6s; animation-delay:0s; }
+.b2{ animation-duration:8s; animation-delay:-2s; }
+.b3{ animation-duration:5s; animation-delay:-4s; }
+.b4{ animation-duration:9s; animation-delay:-1s; }
+.b5{ animation-duration:7s; animation-delay:-3s; }
+@keyframes rise{
+  0%{ transform:translateY(0) translateX(0); opacity:0; }
+  10%{ opacity:.6; }
+  90%{ opacity:.3; }
+  100%{ transform:translateY(-180px) translateX(10px); opacity:0; }
+}
+
+/* ===== CORAL GLOW ===== */
+.coralGlow{ animation: coralPulse 4s ease-in-out infinite; }
+.coralGlow2{ animation: coralPulse 5.5s ease-in-out infinite reverse; }
+@keyframes coralPulse{
+  0%,100%{ opacity:.80; }
+  50%{ opacity:1; filter: drop-shadow(0 0 6px rgba(245,120,60,.55)); }
+}
+
+/* Push page content up so ocean doesn't cover it */
+body{
+  padding-bottom: 200px;
 }
