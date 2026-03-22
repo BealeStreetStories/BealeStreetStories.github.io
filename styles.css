@@ -571,12 +571,27 @@ tr:last-child td{ border-bottom:none; }
   0%,100%{ opacity:.80; }
   50%{ opacity:1; }
 }
-.waveLayer1{ animation: waveDrift1 9s ease-in-out infinite; }
-.waveLayer2{ animation: waveDrift2 12s ease-in-out infinite; }
-.waveLayer3{ animation: waveDrift3 15s ease-in-out infinite; }
+.waveLayer1{ animation: waveDrift1 9s ease-in-out infinite, waveRipple1 3.5s ease-in-out infinite; }
+.waveLayer2{ animation: waveDrift2 12s ease-in-out infinite, waveRipple2 4.8s ease-in-out infinite; }
+.waveLayer3{ animation: waveDrift3 15s ease-in-out infinite, waveRipple3 6.2s ease-in-out infinite; }
 @keyframes waveDrift1{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(-14px); } }
 @keyframes waveDrift2{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(18px); } }
 @keyframes waveDrift3{ 0%,100%{ transform:translateX(0); } 50%{ transform:translateX(-10px); } }
+@keyframes waveRipple1{
+  0%,100%{ transform: translateX(0) translateY(0) scaleY(1); }
+  30%{ transform: translateX(-6px) translateY(-3px) scaleY(1.04); }
+  65%{ transform: translateX(4px) translateY(2px) scaleY(0.97); }
+}
+@keyframes waveRipple2{
+  0%,100%{ transform: translateX(0) translateY(0) scaleY(1); }
+  25%{ transform: translateX(8px) translateY(-4px) scaleY(1.05); }
+  70%{ transform: translateX(-5px) translateY(3px) scaleY(0.96); }
+}
+@keyframes waveRipple3{
+  0%,100%{ transform: translateX(0) translateY(0) scaleY(1); }
+  40%{ transform: translateX(-4px) translateY(-2px) scaleY(1.03); }
+  75%{ transform: translateX(6px) translateY(3px) scaleY(0.98); }
+}
 
 /* Seaweed */
 .seaweed{ transform-origin: bottom center; }
@@ -603,12 +618,12 @@ tr:last-child td{ border-bottom:none; }
 
 /* Fish */
 .fish{ animation-timing-function: linear; animation-iteration-count: infinite; }
-.fish1{ animation: swimR1 20s linear infinite; }
-.fish2{ animation: swimL1 26s linear infinite; }
-.fish3{ animation: swimR2 15s linear infinite -5s; }
-.fish4{ animation: swimL2 22s linear infinite -11s; }
-.fish5{ animation: swimR3 30s linear infinite -3s; }
-.fish6{ animation: swimL3 18s linear infinite -13s; }
+.fish1{ animation: swimR1 38s linear infinite; }
+.fish2{ animation: swimL1 45s linear infinite; }
+.fish3{ animation: swimR2 32s linear infinite; animation-delay: -14s; }
+.fish4{ animation: swimL2 42s linear infinite; animation-delay: -22s; }
+.fish5{ animation: swimR3 50s linear infinite; animation-delay: -8s; }
+.fish6{ animation: swimL3 36s linear infinite; animation-delay: -28s; }
 
 .fishBody{  animation: fishWiggle 0.50s ease-in-out infinite alternate; transform-origin: right center; }
 .fishBody2{ animation: fishWiggle 0.45s ease-in-out infinite alternate; transform-origin: right center; }
@@ -629,12 +644,12 @@ tr:last-child td{ border-bottom:none; }
   to{   transform: skewX(5deg); }
 }
 
-@keyframes swimR1{ 0%{ transform:translateX(-80px) translateY(0); } 48%{ transform:translateX(48vw) translateY(-6px); } 100%{ transform:translateX(calc(100vw + 80px)) translateY(0); } }
-@keyframes swimR2{ 0%{ transform:translateX(-60px) translateY(0); } 50%{ transform:translateX(50vw) translateY(5px); } 100%{ transform:translateX(calc(100vw + 60px)) translateY(0); } }
-@keyframes swimR3{ 0%{ transform:translateX(-70px) translateY(0); } 45%{ transform:translateX(45vw) translateY(-4px); } 100%{ transform:translateX(calc(100vw + 70px)) translateY(0); } }
-@keyframes swimL1{ 0%{ transform:translateX(calc(100vw + 80px)) scaleX(-1) translateY(0); } 52%{ transform:translateX(52vw) scaleX(-1) translateY(5px); } 100%{ transform:translateX(-80px) scaleX(-1) translateY(0); } }
-@keyframes swimL2{ 0%{ transform:translateX(calc(100vw + 60px)) scaleX(-1) translateY(0); } 50%{ transform:translateX(48vw) scaleX(-1) translateY(-4px); } 100%{ transform:translateX(-60px) scaleX(-1) translateY(0); } }
-@keyframes swimL3{ 0%{ transform:translateX(calc(100vw + 70px)) scaleX(-1) translateY(0); } 55%{ transform:translateX(55vw) scaleX(-1) translateY(6px); } 100%{ transform:translateX(-70px) scaleX(-1) translateY(0); } }
+@keyframes swimR1{ 0%{ transform:translateX(-80px); } 100%{ transform:translateX(1600px); } }
+@keyframes swimR2{ 0%{ transform:translateX(-80px); } 100%{ transform:translateX(1600px); } }
+@keyframes swimR3{ 0%{ transform:translateX(-80px); } 100%{ transform:translateX(1600px); } }
+@keyframes swimL1{ 0%{ transform:translateX(1600px) scaleX(-1); } 100%{ transform:translateX(-80px) scaleX(-1); } }
+@keyframes swimL2{ 0%{ transform:translateX(1600px) scaleX(-1); } 100%{ transform:translateX(-80px) scaleX(-1); } }
+@keyframes swimL3{ 0%{ transform:translateX(1600px) scaleX(-1); } 100%{ transform:translateX(-80px) scaleX(-1); } }
 
 /* Bubbles */
 .bubble{ animation: rise linear infinite; opacity:0; }
